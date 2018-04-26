@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>UASB - Servicios WEB</title>
+    <title>Bienvenidos a Servicios WEB</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
-          <h3 class="masthead-brand">Servicios Web</h3>
+          <h3 class="masthead-brand">Bienvenidos a Servicios WEB</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
             <a class="nav-link" href="#">Features</a>
@@ -32,9 +32,9 @@
 
       <main role="main" class="inner cover">
         <h1 class="cover-heading">¡Hola Mundo!</h1>
-        <p class="lead">Claudia Salazar</p>
-        <p class="lead">Juan Navarro</p>
-        <p class="lead">Numa Navarro</p>
+        <p class="lead">Claudia Salazar</p><img src="images/foto_claudia.jpg" alt="Claudia" height="113" width="113">
+        <p class="lead">Juan Navarro</p><img src="images/foto_juan.jpg" alt="Claudia" height="113" width="113">
+        <p class="lead">Numa Navarro</p><img src="images/foto_numa.jpg" alt="Claudia" height="113" width="113">
         <p class="lead">
           <a href="#" class="btn btn-lg btn-secondary">Aprenda mas</a>
         </p>
