@@ -1,7 +1,7 @@
-# proyecto_idea
+Proyecto IDEA
 
 # Nombre Grupo: 
-    EquipoAlfaIdea
+    Equipo: AlfaIdea
 # INTEGRANTES:
     Navarro Juan
     NAvarro Numa
