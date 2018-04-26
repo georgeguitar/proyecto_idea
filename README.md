@@ -1,4 +1,4 @@
-Proyecto IDEA
+# Proyecto IDEA
 
 # Nombre Grupo: 
     Equipo: AlfaIdea
