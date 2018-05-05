@@ -43,8 +43,8 @@ public class ConexionMongo {
 	DB db;
 
 	public DB CrearConexion() throws UnknownHostException {
-//        MongoClientURI uri  = new MongoClientURI("mongodb://super18:super18@ds113700.mlab.com:13700/notable");
-        MongoClientURI uri  = new MongoClientURI(System.getenv("MONGOHQ_URL")); 
+        MongoClientURI uri  = new MongoClientURI("mongodb://super18:super18@ds113700.mlab.com:13700/notable");
+//        MongoClientURI uri  = new MongoClientURI(System.getenv("MONGOHQ_URL")); 
         MongoClient client = new MongoClient(uri);
         db = client.getDB(uri.getDatabase());
 		
