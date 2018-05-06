@@ -35,7 +35,7 @@ public class DocumentoMySqlDAOImpl implements DocumentoMySqlDAO {
 	@Override
 	public List<Person> listar() {
 		List<Person> listaDocumentos = new ArrayList<Person>();
-		
+		/*
 		PreparedStatement st;
 		try {
 			st = con.prepareStatement("select * from person");
@@ -54,7 +54,7 @@ public class DocumentoMySqlDAOImpl implements DocumentoMySqlDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		return listaDocumentos;
 	}
 }
