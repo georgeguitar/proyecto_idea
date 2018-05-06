@@ -1,100 +1,100 @@
-2018-05-06T00:36:24.318086+00:00 app[web.1]: 2018-05-06 00:36:24.317  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-05-06T00:36:24.318360+00:00 app[web.1]: 2018-05-06 00:36:24.318  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-05-06T00:36:25.179760+00:00 app[web.1]: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Cannot load connection class because of underlying exception: 'java.lang.NumberFormatException: For input string: "etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306"'.
-2018-05-06T00:36:25.179979+00:00 app[web.1]: 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-2018-05-06T00:36:25.180044+00:00 app[web.1]: 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-2018-05-06T00:36:25.180097+00:00 app[web.1]: 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-2018-05-06T00:36:25.180134+00:00 app[web.1]: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-2018-05-06T00:36:25.180200+00:00 app[web.1]: 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
-2018-05-06T00:36:25.180253+00:00 app[web.1]: 	at com.mysql.jdbc.Util.getInstance(Util.java:408)
-2018-05-06T00:36:25.180328+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
-2018-05-06T00:36:25.180381+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
-2018-05-06T00:36:25.180933+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
-2018-05-06T00:36:25.180986+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
-2018-05-06T00:36:25.181045+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:338)
-2018-05-06T00:36:25.181101+00:00 app[web.1]: 	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-2018-05-06T00:36:25.181173+00:00 app[web.1]: 	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-2018-05-06T00:36:25.181233+00:00 app[web.1]: 	at com.stats.conexiones.ConexionMySql.CrearConexion(ConexionMySql.java:22)
-2018-05-06T00:36:25.181312+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication.getDataSourceMySql(ServicioStatsApplication.java:44)
-2018-05-06T00:36:25.181349+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$2a21a7be.CGLIB$getDataSourceMySql$1(<generated>)
-2018-05-06T00:36:25.181413+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$2a21a7be$$FastClassBySpringCGLIB$$1ec703dd.invoke(<generated>)
-2018-05-06T00:36:25.181791+00:00 app[web.1]: 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
-2018-05-06T00:36:25.181865+00:00 app[web.1]: 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
-2018-05-06T00:36:25.181905+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$2a21a7be.getDataSourceMySql(<generated>)
-2018-05-06T00:36:25.181956+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-2018-05-06T00:36:25.182023+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-2018-05-06T00:36:25.182085+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-2018-05-06T00:36:25.182155+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:498)
-2018-05-06T00:36:25.182208+00:00 app[web.1]: 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-2018-05-06T00:36:25.182387+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1250)
-2018-05-06T00:36:25.182292+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579)
-2018-05-06T00:36:25.182424+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
-2018-05-06T00:36:25.182498+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
-2018-05-06T00:36:25.182573+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
-2018-05-06T00:36:25.182611+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-2018-05-06T00:36:25.182690+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
-2018-05-06T00:36:25.182756+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-2018-05-06T00:36:25.182814+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-2018-05-06T00:36:25.182868+00:00 app[web.1]: 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-2018-05-06T00:36:25.182934+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
-2018-05-06T00:36:25.183003+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-2018-05-06T00:36:25.183072+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:815)
-2018-05-06T00:36:25.183137+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:721)
-2018-05-06T00:36:25.183200+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:192)
-2018-05-06T00:36:25.183251+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
-2018-05-06T00:36:25.183664+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
-2018-05-06T00:36:25.183733+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
-2018-05-06T00:36:25.188528+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
-2018-05-06T00:36:25.188698+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-2018-05-06T00:36:25.188774+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
-2018-05-06T00:36:25.188872+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-2018-05-06T00:36:25.189428+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-2018-05-06T00:36:25.189708+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
-2018-05-06T00:36:25.189769+00:00 app[web.1]: 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-2018-05-06T00:36:25.189831+00:00 app[web.1]: 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-2018-05-06T00:36:25.189894+00:00 app[web.1]: 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-2018-05-06T00:36:25.189930+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
-2018-05-06T00:36:25.189987+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
-2018-05-06T00:36:25.190529+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
-2018-05-06T00:36:25.190568+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
-2018-05-06T00:36:25.190941+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
-2018-05-06T00:36:25.190978+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication.main(ServicioStatsApplication.java:26)
-2018-05-06T00:36:25.191028+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-2018-05-06T00:36:25.191086+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-2018-05-06T00:36:25.191129+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-2018-05-06T00:36:25.191162+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:498)
-2018-05-06T00:36:25.191197+00:00 app[web.1]: 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
-2018-05-06T00:36:25.191260+00:00 app[web.1]: 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
-2018-05-06T00:36:25.191316+00:00 app[web.1]: 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
-2018-05-06T00:36:25.191352+00:00 app[web.1]: 	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
-2018-05-06T00:36:25.192270+00:00 app[web.1]: Caused by: java.lang.NumberFormatException: For input string: "etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306"
-2018-05-06T00:36:25.192315+00:00 app[web.1]: 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-2018-05-06T00:36:25.192353+00:00 app[web.1]: 	at java.lang.Integer.parseInt(Integer.java:580)
-2018-05-06T00:36:25.192404+00:00 app[web.1]: 	at java.lang.Integer.parseInt(Integer.java:615)
-2018-05-06T00:36:25.192438+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.port(NonRegisteringDriver.java:825)
-2018-05-06T00:36:25.192490+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
-2018-05-06T00:36:25.192532+00:00 app[web.1]: 	... 55 more
-2018-05-06T00:36:25.201863+00:00 app[web.1]: 2018-05-06 00:36:25.201  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentoMySqlDAOImpl' defined in URL [jar:file:/app/target/ServicioStats-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/stats/dao/DocumentoMySqlDAOImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.sql.Connection' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2018-05-06T00:36:25.225512+00:00 app[web.1]: 2018-05-06 00:36:25.225  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-05-06T00:36:25.302792+00:00 app[web.1]: 2018-05-06 00:36:25.302  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener : 
-2018-05-06T00:36:25.302796+00:00 app[web.1]: 
-2018-05-06T00:36:25.302798+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-05-06T00:36:25.986067+00:00 app[web.1]: 2018-05-06 00:36:25.978 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-2018-05-06T00:36:25.986083+00:00 app[web.1]: 
-2018-05-06T00:36:25.986085+00:00 app[web.1]: ***************************
-2018-05-06T00:36:25.986087+00:00 app[web.1]: APPLICATION FAILED TO START
-2018-05-06T00:36:25.986088+00:00 app[web.1]: ***************************
-2018-05-06T00:36:25.986089+00:00 app[web.1]: 
-2018-05-06T00:36:25.986091+00:00 app[web.1]: Description:
-2018-05-06T00:36:25.986092+00:00 app[web.1]: 
-2018-05-06T00:36:25.986094+00:00 app[web.1]: Parameter 0 of constructor in com.stats.dao.DocumentoMySqlDAOImpl required a bean of type 'java.sql.Connection' that could not be found.
-2018-05-06T00:36:25.986096+00:00 app[web.1]: 
-2018-05-06T00:36:25.986097+00:00 app[web.1]: 
-2018-05-06T00:36:25.986099+00:00 app[web.1]: Action:
-2018-05-06T00:36:25.986100+00:00 app[web.1]: 
-2018-05-06T00:36:25.986102+00:00 app[web.1]: Consider defining a bean of type 'java.sql.Connection' in your configuration.
-2018-05-06T00:36:25.986104+00:00 app[web.1]: 
-2018-05-06T00:36:26.199263+00:00 heroku[web.1]: State changed from starting to crashed
-2018-05-06T00:36:26.180775+00:00 heroku[web.1]: Process exited with status 1
-2018-05-06T00:36:33.902893+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=serviciostats.herokuapp.com request_id=fe5c90b4-dd64-44b8-8d0a-a7b218c30326 fwd="181.115.248.181" dyno= connect= service= status=503 bytes= protocol=https
-2018-05-06T00:36:41.280220+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/stats/listarDocumentos" host=serviciostats.herokuapp.com request_id=7f95c436-3fe9-43f5-9f60-fdc37dfd863e fwd="181.115.248.181" dyno= connect= service= status=503 bytes= protocol=https
+2018-05-06T00:57:45.597270+00:00 heroku[run.7100]: Awaiting client
+2018-05-06T00:57:45.688969+00:00 heroku[run.7100]: State changed from starting to up
+2018-05-06T00:57:45.642740+00:00 heroku[run.7100]: Starting process with command `bash`
+2018-05-06T00:58:26.820352+00:00 heroku[web.1]: State changed from crashed to starting
+2018-05-06T00:58:30.993701+00:00 heroku[web.1]: Starting process with command `java -jar target/ServicioStats-0.0.1-SNAPSHOT.jar`
+2018-05-06T00:58:33.345914+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2018-05-06T00:58:33.349866+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx300m -Xss512k -Dfile.encoding=UTF-8 
+2018-05-06T00:58:37.023157+00:00 app[web.1]: 
+2018-05-06T00:58:37.023210+00:00 app[web.1]:   .   ____          _            __ _ _
+2018-05-06T00:58:37.023214+00:00 app[web.1]:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2018-05-06T00:58:37.024415+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2018-05-06T00:58:37.024512+00:00 app[web.1]:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2018-05-06T00:58:37.024597+00:00 app[web.1]:   '  |____| .__|_| |_|_| |_\__, | / / / /
+2018-05-06T00:58:37.024677+00:00 app[web.1]:  =========|_|==============|___/=/_/_/_/
+2018-05-06T00:58:37.030288+00:00 app[web.1]:  :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-05-06T00:58:37.030330+00:00 app[web.1]: 
+2018-05-06T00:58:37.460970+00:00 app[web.1]: 2018-05-06 00:58:37.455  INFO 4 --- [           main] c.s.servicio.ServicioStatsApplication    : Starting ServicioStatsApplication v0.0.1-SNAPSHOT on c41d3194-e128-46a8-b412-4104bdb3bb25 with PID 4 (/app/target/ServicioStats-0.0.1-SNAPSHOT.jar started by u27255 in /app)
+2018-05-06T00:58:37.480563+00:00 app[web.1]: 2018-05-06 00:58:37.480  INFO 4 --- [           main] c.s.servicio.ServicioStatsApplication    : No active profile set, falling back to default profiles: default
+2018-05-06T00:58:37.772135+00:00 app[web.1]: 2018-05-06 00:58:37.771  INFO 4 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@64b8f8f4: startup date [Sun May 06 00:58:37 UTC 2018]; root of context hierarchy
+2018-05-06T00:58:43.714264+00:00 app[web.1]: 2018-05-06 00:58:43.713  INFO 4 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-06T00:58:45.582965+00:00 app[web.1]: 2018-05-06 00:58:45.582  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-06T00:58:45.728571+00:00 app[web.1]: 2018-05-06 00:58:45.720  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-06T00:58:45.729282+00:00 app[web.1]: 2018-05-06 00:58:45.729  INFO 4 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-06T00:58:45.986738+00:00 app[web.1]: 2018-05-06 00:58:45.986  INFO 4 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/app/.jdk/jre/lib/amd64/server::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-05-06T00:58:46.920371+00:00 app[web.1]: 2018-05-06 00:58:46.919  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-06T00:58:46.921542+00:00 app[web.1]: 2018-05-06 00:58:46.921  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9157 ms
+2018-05-06T00:58:48.036811+00:00 app[web.1]: 2018-05-06 00:58:48.036  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-06T00:58:48.115258+00:00 app[web.1]: 2018-05-06 00:58:48.115  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-06T00:58:48.125321+00:00 app[web.1]: 2018-05-06 00:58:48.125  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-06T00:58:48.125968+00:00 app[web.1]: 2018-05-06 00:58:48.125  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-06T00:58:48.127410+00:00 app[web.1]: 2018-05-06 00:58:48.127  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-06T00:58:50.878608+00:00 app[web.1]: Sun May 06 00:58:50 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2018-05-06T00:58:52.768371+00:00 app[web.1]: Conectionesfull
+2018-05-06T00:58:54.692083+00:00 app[web.1]: 2018-05-06 00:58:54.691  INFO 4 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-06T00:58:56.477762+00:00 app[web.1]: 2018-05-06 00:58:56.477  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@64b8f8f4: startup date [Sun May 06 00:58:37 UTC 2018]; root of context hierarchy
+2018-05-06T00:58:57.120977+00:00 app[web.1]: 2018-05-06 00:58:57.115  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/listarDocumentos]}" onto public java.lang.String com.stats.controller.ServiciosRest.listaLibros()
+2018-05-06T00:58:57.136612+00:00 app[web.1]: 2018-05-06 00:58:57.134  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/listarPersona]}" onto public java.lang.String com.stats.controller.ServiciosRest.listaPerson()
+2018-05-06T00:58:57.137826+00:00 app[web.1]: 2018-05-06 00:58:57.137  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/buscarDocsDisponibles/{disponibilidad}]}" onto public java.lang.String com.stats.controller.ServiciosRest.buscarDisponibilidad(java.lang.String)
+2018-05-06T00:58:57.139462+00:00 app[web.1]: 2018-05-06 00:58:57.138  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/buscarTitulos/{titulo}]}" onto public java.lang.String com.stats.controller.ServiciosRest.buscarPorTitulo(java.lang.String)
+2018-05-06T00:58:57.185914+00:00 app[web.1]: 2018-05-06 00:58:57.183  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-06T00:58:57.187904+00:00 app[web.1]: 2018-05-06 00:58:57.187  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-06T00:58:57.360363+00:00 app[web.1]: 2018-05-06 00:58:57.360  INFO 4 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-06T00:58:57.363701+00:00 app[web.1]: 2018-05-06 00:58:57.363  INFO 4 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-06T00:58:58.508888+00:00 app[web.1]: 2018-05-06 00:58:58.508  INFO 4 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-06T00:58:58.750636+00:00 app[web.1]: 2018-05-06 00:58:58.749  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-06T00:58:58.794211+00:00 app[web.1]: 2018-05-06 00:58:58.781  INFO 4 --- [           main] c.s.servicio.ServicioStatsApplication    : Started ServicioStatsApplication in 23.02 seconds (JVM running for 25.415)
+2018-05-06T01:00:01.417242+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch
+2018-05-06T01:00:01.417242+00:00 heroku[web.1]: Stopping process with SIGKILL
+2018-05-06T01:00:01.689254+00:00 heroku[web.1]: Process exited with status 137
+2018-05-06T01:00:02.034622+00:00 heroku[web.1]: State changed from starting to crashed
+2018-05-06T01:32:59.961704+00:00 heroku[run.7100]: Client connection closed. Sending SIGHUP to all processes
+2018-05-06T01:33:00.515300+00:00 heroku[run.7100]: State changed from up to complete
+2018-05-06T01:33:00.497423+00:00 heroku[run.7100]: Process exited with status 129
+2018-05-06T01:36:47.882720+00:00 heroku[web.1]: State changed from crashed to starting
+2018-05-06T01:36:52.279984+00:00 heroku[web.1]: Starting process with command `java -jar target/ServicioStats-0.0.1-SNAPSHOT.jar`
+2018-05-06T01:36:54.535690+00:00 app[web.1]: Setting JAVA_TOOL_OPTIONS defaults based on dyno size. Custom settings will override them.
+2018-05-06T01:36:54.542673+00:00 app[web.1]: Picked up JAVA_TOOL_OPTIONS: -Xmx300m -Xss512k -Dfile.encoding=UTF-8 
+2018-05-06T01:36:58.479081+00:00 app[web.1]: 
+2018-05-06T01:36:58.479157+00:00 app[web.1]:   .   ____          _            __ _ _
+2018-05-06T01:36:58.479160+00:00 app[web.1]:  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2018-05-06T01:36:58.479234+00:00 app[web.1]: ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2018-05-06T01:36:58.479330+00:00 app[web.1]:  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2018-05-06T01:36:58.479577+00:00 app[web.1]:   '  |____| .__|_| |_|_| |_\__, | / / / /
+2018-05-06T01:36:58.479721+00:00 app[web.1]:  =========|_|==============|___/=/_/_/_/
+2018-05-06T01:36:58.482070+00:00 app[web.1]:  :: Spring Boot ::        (v2.0.1.RELEASE)
+2018-05-06T01:36:58.482146+00:00 app[web.1]: 
+2018-05-06T01:36:59.140472+00:00 app[web.1]: 2018-05-06 01:36:59.117  INFO 4 --- [           main] c.s.servicio.ServicioStatsApplication    : Starting ServicioStatsApplication v0.0.1-SNAPSHOT on 5fccb6e9-f929-444c-b375-128434c99cab with PID 4 (/app/target/ServicioStats-0.0.1-SNAPSHOT.jar started by u45795 in /app)
+2018-05-06T01:36:59.141451+00:00 app[web.1]: 2018-05-06 01:36:59.141  INFO 4 --- [           main] c.s.servicio.ServicioStatsApplication    : No active profile set, falling back to default profiles: default
+2018-05-06T01:36:59.790017+00:00 app[web.1]: 2018-05-06 01:36:59.789  INFO 4 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@64b8f8f4: startup date [Sun May 06 01:36:59 UTC 2018]; root of context hierarchy
+2018-05-06T01:37:04.913147+00:00 app[web.1]: 2018-05-06 01:37:04.912  INFO 4 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-06T01:37:06.454457+00:00 app[web.1]: 2018-05-06 01:37:06.453  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-05-06T01:37:06.573910+00:00 app[web.1]: 2018-05-06 01:37:06.573  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-06T01:37:06.574298+00:00 app[web.1]: 2018-05-06 01:37:06.574  INFO 4 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-05-06T01:37:06.601841+00:00 app[web.1]: 2018-05-06 01:37:06.601  INFO 4 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/app/.jdk/jre/lib/amd64/server::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-05-06T01:37:06.794252+00:00 app[web.1]: 2018-05-06 01:37:06.793  INFO 4 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-05-06T01:37:06.794524+00:00 app[web.1]: 2018-05-06 01:37:06.794  INFO 4 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7014 ms
+2018-05-06T01:37:07.503445+00:00 app[web.1]: 2018-05-06 01:37:07.502  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-05-06T01:37:07.538762+00:00 app[web.1]: 2018-05-06 01:37:07.538  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-06T01:37:07.539452+00:00 app[web.1]: 2018-05-06 01:37:07.539  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-06T01:37:07.539576+00:00 app[web.1]: 2018-05-06 01:37:07.539  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-06T01:37:07.539708+00:00 app[web.1]: 2018-05-06 01:37:07.539  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-06T01:37:09.447005+00:00 app[web.1]: Sun May 06 01:37:09 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+2018-05-06T01:37:11.226179+00:00 app[web.1]: Conectionesfull
+2018-05-06T01:37:12.117359+00:00 app[web.1]: 2018-05-06 01:37:12.117  INFO 4 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-06T01:37:13.483495+00:00 app[web.1]: 2018-05-06 01:37:13.483  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@64b8f8f4: startup date [Sun May 06 01:36:59 UTC 2018]; root of context hierarchy
+2018-05-06T01:37:14.002471+00:00 app[web.1]: 2018-05-06 01:37:14.001  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/listarDocumentos]}" onto public java.lang.String com.stats.controller.ServiciosRest.listaLibros()
+2018-05-06T01:37:13.995822+00:00 app[web.1]: 2018-05-06 01:37:13.995  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/buscarTitulos/{titulo}]}" onto public java.lang.String com.stats.controller.ServiciosRest.buscarPorTitulo(java.lang.String)
+2018-05-06T01:37:14.000936+00:00 app[web.1]: 2018-05-06 01:37:13.998  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/listarPersona]}" onto public java.lang.String com.stats.controller.ServiciosRest.listaPerson()
+2018-05-06T01:37:14.105622+00:00 app[web.1]: 2018-05-06 01:37:14.105  INFO 4 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-06T01:37:14.013456+00:00 app[web.1]: 2018-05-06 01:37:14.013  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-06T01:37:14.012176+00:00 app[web.1]: 2018-05-06 01:37:14.011  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-06T01:37:14.003200+00:00 app[web.1]: 2018-05-06 01:37:14.003  INFO 4 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/stats/buscarDocsDisponibles/{disponibilidad}]}" onto public java.lang.String com.stats.controller.ServiciosRest.buscarDisponibilidad(java.lang.String)
+2018-05-06T01:37:14.105757+00:00 app[web.1]: 2018-05-06 01:37:14.105  INFO 4 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-06T01:37:15.760542+00:00 app[web.1]: 2018-05-06 01:37:15.760  INFO 4 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-06T01:37:15.935211+00:00 app[web.1]: 2018-05-06 01:37:15.934  INFO 4 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-05-06T01:37:15.946283+00:00 app[web.1]: 2018-05-06 01:37:15.944  INFO 4 --- [           main] c.s.servicio.ServicioStatsApplication    : Started ServicioStatsApplication in 19.265 seconds (JVM running for 21.401)
+2018-05-06T01:38:22.810213+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 90 seconds of launch
+2018-05-06T01:38:22.810213+00:00 heroku[web.1]: Stopping process with SIGKILL
+2018-05-06T01:38:22.975092+00:00 heroku[web.1]: Process exited with status 137
+2018-05-06T01:38:22.995386+00:00 heroku[web.1]: State changed from starting to crashed
