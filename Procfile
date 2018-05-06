@@ -1,1 +1,1 @@
-web: java -jar target/ServicioStats-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/ServicioStats-0.0.1-SNAPSHOT.jar
