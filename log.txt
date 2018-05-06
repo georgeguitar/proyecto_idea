@@ -1,100 +1,100 @@
-2018-05-06T00:33:28.532152+00:00 app[web.1]: 2018-05-06 00:33:28.531  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-05-06T00:33:28.537095+00:00 app[web.1]: 2018-05-06 00:33:28.536  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-05-06T00:33:29.976460+00:00 app[web.1]: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Cannot load connection class because of underlying exception: 'java.lang.NumberFormatException: For input string: "etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306"'.
-2018-05-06T00:33:29.976724+00:00 app[web.1]: 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-2018-05-06T00:33:29.976793+00:00 app[web.1]: 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-2018-05-06T00:33:29.976843+00:00 app[web.1]: 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-2018-05-06T00:33:29.976909+00:00 app[web.1]: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-2018-05-06T00:33:29.977020+00:00 app[web.1]: 	at com.mysql.jdbc.Util.getInstance(Util.java:408)
-2018-05-06T00:33:29.976969+00:00 app[web.1]: 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
-2018-05-06T00:33:29.977102+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
-2018-05-06T00:33:29.977162+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
-2018-05-06T00:33:29.981403+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
-2018-05-06T00:33:29.981489+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
-2018-05-06T00:33:29.981540+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:338)
-2018-05-06T00:33:29.981625+00:00 app[web.1]: 	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-2018-05-06T00:33:29.981674+00:00 app[web.1]: 	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-2018-05-06T00:33:29.981728+00:00 app[web.1]: 	at com.stats.conexiones.ConexionMySql.CrearConexion(ConexionMySql.java:22)
-2018-05-06T00:33:29.981791+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication.getDataSourceMySql(ServicioStatsApplication.java:44)
-2018-05-06T00:33:29.981851+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$a19e0c1f.CGLIB$getDataSourceMySql$2(<generated>)
-2018-05-06T00:33:29.981922+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$a19e0c1f$$FastClassBySpringCGLIB$$54ac303a.invoke(<generated>)
-2018-05-06T00:33:29.982325+00:00 app[web.1]: 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
-2018-05-06T00:33:29.982402+00:00 app[web.1]: 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
-2018-05-06T00:33:29.982463+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$a19e0c1f.getDataSourceMySql(<generated>)
-2018-05-06T00:33:29.982530+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-2018-05-06T00:33:29.982582+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-2018-05-06T00:33:29.982652+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-2018-05-06T00:33:29.982707+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:498)
-2018-05-06T00:33:29.982838+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579)
-2018-05-06T00:33:29.982777+00:00 app[web.1]: 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-2018-05-06T00:33:29.982890+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1250)
-2018-05-06T00:33:29.982973+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
-2018-05-06T00:33:29.983036+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
-2018-05-06T00:33:29.983082+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
-2018-05-06T00:33:29.983151+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-2018-05-06T00:33:29.983220+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
-2018-05-06T00:33:29.983285+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-2018-05-06T00:33:29.983344+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-2018-05-06T00:33:29.983406+00:00 app[web.1]: 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
-2018-05-06T00:33:29.983459+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
-2018-05-06T00:33:29.983529+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
-2018-05-06T00:33:29.983666+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:721)
-2018-05-06T00:33:29.983595+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:815)
-2018-05-06T00:33:29.983740+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:192)
-2018-05-06T00:33:29.983807+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
-2018-05-06T00:33:29.983891+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
-2018-05-06T00:33:29.983954+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
-2018-05-06T00:33:29.984024+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
-2018-05-06T00:33:29.984086+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
-2018-05-06T00:33:29.984162+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
-2018-05-06T00:33:29.984201+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
-2018-05-06T00:33:29.984276+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
-2018-05-06T00:33:29.984344+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
-2018-05-06T00:33:29.984419+00:00 app[web.1]: 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
-2018-05-06T00:33:29.984489+00:00 app[web.1]: 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-2018-05-06T00:33:29.984536+00:00 app[web.1]: 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
-2018-05-06T00:33:29.984611+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
-2018-05-06T00:33:29.984671+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
-2018-05-06T00:33:29.984774+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
-2018-05-06T00:33:29.984840+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
-2018-05-06T00:33:29.984909+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
-2018-05-06T00:33:29.984968+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication.main(ServicioStatsApplication.java:26)
-2018-05-06T00:33:29.985025+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-2018-05-06T00:33:29.985090+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-2018-05-06T00:33:29.985143+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-2018-05-06T00:33:29.985202+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:498)
-2018-05-06T00:33:29.985270+00:00 app[web.1]: 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
-2018-05-06T00:33:29.985321+00:00 app[web.1]: 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
-2018-05-06T00:33:29.985379+00:00 app[web.1]: 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
-2018-05-06T00:33:29.985451+00:00 app[web.1]: 	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
-2018-05-06T00:33:30.010041+00:00 app[web.1]: Caused by: java.lang.NumberFormatException: For input string: "etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306"
-2018-05-06T00:33:30.010091+00:00 app[web.1]: 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-2018-05-06T00:33:30.010270+00:00 app[web.1]: 	at java.lang.Integer.parseInt(Integer.java:580)
-2018-05-06T00:33:30.010273+00:00 app[web.1]: 	at java.lang.Integer.parseInt(Integer.java:615)
-2018-05-06T00:33:30.010275+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.port(NonRegisteringDriver.java:825)
-2018-05-06T00:33:30.010280+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
-2018-05-06T00:33:30.010623+00:00 app[web.1]: 	... 55 more
-2018-05-06T00:33:30.023330+00:00 app[web.1]: 2018-05-06 00:33:30.023  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentoMySqlDAOImpl' defined in URL [jar:file:/app/target/ServicioStats-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/stats/dao/DocumentoMySqlDAOImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.sql.Connection' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2018-05-06T00:33:30.048810+00:00 app[web.1]: 2018-05-06 00:33:30.048  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-05-06T00:33:30.135099+00:00 app[web.1]: 2018-05-06 00:33:30.134  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener : 
-2018-05-06T00:33:30.135103+00:00 app[web.1]: 
-2018-05-06T00:33:30.135104+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-05-06T00:33:30.722336+00:00 app[web.1]: 2018-05-06 00:33:30.719 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-2018-05-06T00:33:30.722348+00:00 app[web.1]: 
-2018-05-06T00:33:30.722351+00:00 app[web.1]: ***************************
-2018-05-06T00:33:30.722353+00:00 app[web.1]: APPLICATION FAILED TO START
-2018-05-06T00:33:30.722354+00:00 app[web.1]: ***************************
-2018-05-06T00:33:30.722356+00:00 app[web.1]: 
-2018-05-06T00:33:30.722357+00:00 app[web.1]: Description:
-2018-05-06T00:33:30.722358+00:00 app[web.1]: 
-2018-05-06T00:33:30.722361+00:00 app[web.1]: Parameter 0 of constructor in com.stats.dao.DocumentoMySqlDAOImpl required a bean of type 'java.sql.Connection' that could not be found.
-2018-05-06T00:33:30.722363+00:00 app[web.1]: 
-2018-05-06T00:33:30.722364+00:00 app[web.1]: 
-2018-05-06T00:33:30.722366+00:00 app[web.1]: Action:
-2018-05-06T00:33:30.722367+00:00 app[web.1]: 
-2018-05-06T00:33:30.722369+00:00 app[web.1]: Consider defining a bean of type 'java.sql.Connection' in your configuration.
-2018-05-06T00:33:30.722371+00:00 app[web.1]: 
-2018-05-06T00:33:30.948853+00:00 heroku[web.1]: Process exited with status 1
-2018-05-06T00:33:30.962861+00:00 heroku[web.1]: State changed from starting to crashed
-2018-05-06T00:33:33.318890+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=serviciostats.herokuapp.com request_id=f466b8e7-74b8-44df-872a-ca173dde82e9 fwd="181.115.248.181" dyno= connect= service= status=503 bytes= protocol=https
-2018-05-06T00:33:38.237623+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/stats/listarDocumentos" host=serviciostats.herokuapp.com request_id=eb728ec3-0967-4113-b847-5b8051a188a1 fwd="181.115.248.181" dyno= connect= service= status=503 bytes= protocol=https
+2018-05-06T00:36:24.318086+00:00 app[web.1]: 2018-05-06 00:36:24.317  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-06T00:36:24.318360+00:00 app[web.1]: 2018-05-06 00:36:24.318  INFO 4 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-06T00:36:25.179760+00:00 app[web.1]: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Cannot load connection class because of underlying exception: 'java.lang.NumberFormatException: For input string: "etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306"'.
+2018-05-06T00:36:25.179979+00:00 app[web.1]: 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2018-05-06T00:36:25.180044+00:00 app[web.1]: 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+2018-05-06T00:36:25.180097+00:00 app[web.1]: 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2018-05-06T00:36:25.180134+00:00 app[web.1]: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+2018-05-06T00:36:25.180200+00:00 app[web.1]: 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2018-05-06T00:36:25.180253+00:00 app[web.1]: 	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+2018-05-06T00:36:25.180328+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:919)
+2018-05-06T00:36:25.180381+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:898)
+2018-05-06T00:36:25.180933+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:887)
+2018-05-06T00:36:25.180986+00:00 app[web.1]: 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:861)
+2018-05-06T00:36:25.181045+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:338)
+2018-05-06T00:36:25.181101+00:00 app[web.1]: 	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+2018-05-06T00:36:25.181173+00:00 app[web.1]: 	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+2018-05-06T00:36:25.181233+00:00 app[web.1]: 	at com.stats.conexiones.ConexionMySql.CrearConexion(ConexionMySql.java:22)
+2018-05-06T00:36:25.181312+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication.getDataSourceMySql(ServicioStatsApplication.java:44)
+2018-05-06T00:36:25.181349+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$2a21a7be.CGLIB$getDataSourceMySql$1(<generated>)
+2018-05-06T00:36:25.181413+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$2a21a7be$$FastClassBySpringCGLIB$$1ec703dd.invoke(<generated>)
+2018-05-06T00:36:25.181791+00:00 app[web.1]: 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+2018-05-06T00:36:25.181865+00:00 app[web.1]: 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361)
+2018-05-06T00:36:25.181905+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication$$EnhancerBySpringCGLIB$$2a21a7be.getDataSourceMySql(<generated>)
+2018-05-06T00:36:25.181956+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018-05-06T00:36:25.182023+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018-05-06T00:36:25.182085+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018-05-06T00:36:25.182155+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018-05-06T00:36:25.182208+00:00 app[web.1]: 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+2018-05-06T00:36:25.182387+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1250)
+2018-05-06T00:36:25.182292+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:579)
+2018-05-06T00:36:25.182424+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+2018-05-06T00:36:25.182498+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
+2018-05-06T00:36:25.182573+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+2018-05-06T00:36:25.182611+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+2018-05-06T00:36:25.182690+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+2018-05-06T00:36:25.182756+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+2018-05-06T00:36:25.182814+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+2018-05-06T00:36:25.182868+00:00 app[web.1]: 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251)
+2018-05-06T00:36:25.182934+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+2018-05-06T00:36:25.183003+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1065)
+2018-05-06T00:36:25.183072+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:815)
+2018-05-06T00:36:25.183137+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:721)
+2018-05-06T00:36:25.183200+00:00 app[web.1]: 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:192)
+2018-05-06T00:36:25.183251+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1270)
+2018-05-06T00:36:25.183664+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+2018-05-06T00:36:25.183733+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:541)
+2018-05-06T00:36:25.188528+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:501)
+2018-05-06T00:36:25.188698+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317)
+2018-05-06T00:36:25.188774+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+2018-05-06T00:36:25.188872+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315)
+2018-05-06T00:36:25.189428+00:00 app[web.1]: 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+2018-05-06T00:36:25.189708+00:00 app[web.1]: 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:760)
+2018-05-06T00:36:25.189769+00:00 app[web.1]: 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+2018-05-06T00:36:25.189831+00:00 app[web.1]: 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+2018-05-06T00:36:25.189894+00:00 app[web.1]: 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+2018-05-06T00:36:25.189930+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+2018-05-06T00:36:25.189987+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:395)
+2018-05-06T00:36:25.190529+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+2018-05-06T00:36:25.190568+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1255)
+2018-05-06T00:36:25.190941+00:00 app[web.1]: 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1243)
+2018-05-06T00:36:25.190978+00:00 app[web.1]: 	at com.stats.servicio.ServicioStatsApplication.main(ServicioStatsApplication.java:26)
+2018-05-06T00:36:25.191028+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2018-05-06T00:36:25.191086+00:00 app[web.1]: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2018-05-06T00:36:25.191129+00:00 app[web.1]: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2018-05-06T00:36:25.191162+00:00 app[web.1]: 	at java.lang.reflect.Method.invoke(Method.java:498)
+2018-05-06T00:36:25.191197+00:00 app[web.1]: 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+2018-05-06T00:36:25.191260+00:00 app[web.1]: 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+2018-05-06T00:36:25.191316+00:00 app[web.1]: 	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+2018-05-06T00:36:25.191352+00:00 app[web.1]: 	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+2018-05-06T00:36:25.192270+00:00 app[web.1]: Caused by: java.lang.NumberFormatException: For input string: "etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306"
+2018-05-06T00:36:25.192315+00:00 app[web.1]: 	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+2018-05-06T00:36:25.192353+00:00 app[web.1]: 	at java.lang.Integer.parseInt(Integer.java:580)
+2018-05-06T00:36:25.192404+00:00 app[web.1]: 	at java.lang.Integer.parseInt(Integer.java:615)
+2018-05-06T00:36:25.192438+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.port(NonRegisteringDriver.java:825)
+2018-05-06T00:36:25.192490+00:00 app[web.1]: 	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+2018-05-06T00:36:25.192532+00:00 app[web.1]: 	... 55 more
+2018-05-06T00:36:25.201863+00:00 app[web.1]: 2018-05-06 00:36:25.201  WARN 4 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentoMySqlDAOImpl' defined in URL [jar:file:/app/target/ServicioStats-0.0.1-SNAPSHOT.jar!/BOOT-INF/classes!/com/stats/dao/DocumentoMySqlDAOImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.sql.Connection' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2018-05-06T00:36:25.225512+00:00 app[web.1]: 2018-05-06 00:36:25.225  INFO 4 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-06T00:36:25.302792+00:00 app[web.1]: 2018-05-06 00:36:25.302  INFO 4 --- [           main] ConditionEvaluationReportLoggingListener : 
+2018-05-06T00:36:25.302796+00:00 app[web.1]: 
+2018-05-06T00:36:25.302798+00:00 app[web.1]: Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-05-06T00:36:25.986067+00:00 app[web.1]: 2018-05-06 00:36:25.978 ERROR 4 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2018-05-06T00:36:25.986083+00:00 app[web.1]: 
+2018-05-06T00:36:25.986085+00:00 app[web.1]: ***************************
+2018-05-06T00:36:25.986087+00:00 app[web.1]: APPLICATION FAILED TO START
+2018-05-06T00:36:25.986088+00:00 app[web.1]: ***************************
+2018-05-06T00:36:25.986089+00:00 app[web.1]: 
+2018-05-06T00:36:25.986091+00:00 app[web.1]: Description:
+2018-05-06T00:36:25.986092+00:00 app[web.1]: 
+2018-05-06T00:36:25.986094+00:00 app[web.1]: Parameter 0 of constructor in com.stats.dao.DocumentoMySqlDAOImpl required a bean of type 'java.sql.Connection' that could not be found.
+2018-05-06T00:36:25.986096+00:00 app[web.1]: 
+2018-05-06T00:36:25.986097+00:00 app[web.1]: 
+2018-05-06T00:36:25.986099+00:00 app[web.1]: Action:
+2018-05-06T00:36:25.986100+00:00 app[web.1]: 
+2018-05-06T00:36:25.986102+00:00 app[web.1]: Consider defining a bean of type 'java.sql.Connection' in your configuration.
+2018-05-06T00:36:25.986104+00:00 app[web.1]: 
+2018-05-06T00:36:26.199263+00:00 heroku[web.1]: State changed from starting to crashed
+2018-05-06T00:36:26.180775+00:00 heroku[web.1]: Process exited with status 1
+2018-05-06T00:36:33.902893+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=serviciostats.herokuapp.com request_id=fe5c90b4-dd64-44b8-8d0a-a7b218c30326 fwd="181.115.248.181" dyno= connect= service= status=503 bytes= protocol=https
+2018-05-06T00:36:41.280220+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/stats/listarDocumentos" host=serviciostats.herokuapp.com request_id=7f95c436-3fe9-43f5-9f60-fdc37dfd863e fwd="181.115.248.181" dyno= connect= service= status=503 bytes= protocol=https

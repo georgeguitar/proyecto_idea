@@ -15,9 +15,9 @@ public class ConexionMySql {
 		try{
 			if( con == null ){
 			    String driver="com.mysql.jdbc.Driver"; //el driver varia segun la DB que usemos
-			    String url="jdbc:mysql://mfh5oxm25hprrpon:etk70aoilrc5y8nz@ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/g3gcrh40646vhxdn";
-			    String pwd="etk70aoilrc5y8nz";
+			    String url="jdbc:mysql://ocvwlym0zv3tcn68.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/g3gcrh40646vhxdn";
 			    String usr="mfh5oxm25hprrpon";
+			    String pwd="etk70aoilrc5y8nz";
 			    Class.forName(driver);
 			    con = DriverManager.getConnection(url,usr,pwd);
 			    System.out.println("Conectionesfull");
