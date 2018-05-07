@@ -7,9 +7,6 @@
  * Diplomado Software Libre versión Sucre
  * noviembre 2016
  */
-
-
-
 package com.stats.dao;
 
 import java.util.ArrayList;

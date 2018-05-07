@@ -10,9 +10,12 @@
 
 package com.stats.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
+import javax.annotation.PostConstruct;
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -27,16 +30,25 @@ import com.stats.dao.DocumentoDAO;
 import com.stats.dao.DocumentoMySqlDAO;
 import com.stats.model.Documento;
 import com.stats.model.Person;
+import com.stats.rabbitmq.ReceiveImpl;
 
 @RestController
 @RequestMapping("/stats")
 public class ServiciosRest {
+	
+	@PostConstruct
+	public void initialize() throws IOException, TimeoutException {
+		receiveImpl.escuchar();
+	}	
 	
 	@Autowired
 	private DocumentoDAO documentoDAO;
 	
 	@Autowired
 	private DocumentoMySqlDAO documentoMySqlDAO;
+	
+	@Autowired
+	private ReceiveImpl receiveImpl;	
 	
 	@GET
 	@RequestMapping(value = "/listarDocumentos")
