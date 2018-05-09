@@ -14,8 +14,8 @@ package com.stats.dao;
 
 import java.util.List;
 
-import com.stats.model.Person;
+import com.stats.model.User;
 
 public interface DocumentoMySqlDAO {
-	public List<Person> listar();
+	public List<User> listar();
 }

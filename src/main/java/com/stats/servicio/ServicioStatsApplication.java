@@ -12,14 +12,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.mongodb.DB;
+import com.mongodb.client.MongoDatabase;
 import com.rabbitmq.client.Channel;
 import com.stats.conexiones.ConexionMongo;
 import com.stats.conexiones.ConexionMySql;
 import com.stats.conexiones.ConexionRabbitMQ;
-import com.stats.dao.DocumentDAOImpl;
-import com.stats.dao.DocumentoDAO;
 import com.stats.dao.DocumentoMySqlDAO;
 import com.stats.dao.DocumentoMySqlDAOImpl;
+import com.stats.dao.IdeaDAO;
+import com.stats.dao.IdeaDAOImpl;
 import com.stats.rabbitmq.Receive;
 import com.stats.rabbitmq.ReceiveImpl;
 
@@ -30,22 +31,18 @@ import com.stats.rabbitmq.ReceiveImpl;
 public class ServicioStatsApplication {
 	public static void main(String[] args) throws IOException, TimeoutException {
 		SpringApplication.run(ServicioStatsApplication.class, args);
-		
-//		Receive receive = new Receive();
-//		receive.conectarRabbit();
 	}
 	
-
 	@Bean
-	public DB getDataSourceMongoDB() throws UnknownHostException {
+	public MongoDatabase getDataSourceMongoDB() throws UnknownHostException {
 		ConexionMongo conexion = new ConexionMongo();
-		DB db = conexion.CrearConexion();
+		MongoDatabase db = conexion.CrearConexion();
 		
 		return db;
 	}
-
-	public DocumentoDAO getContactDAO() throws UnknownHostException {
-		return new DocumentDAOImpl(getDataSourceMongoDB());
+	
+	public IdeaDAO getIdeaDAO() throws UnknownHostException {
+		return new IdeaDAOImpl(getDataSourceMongoDB());
 	}
 	
 	@Bean
@@ -60,7 +57,8 @@ public class ServicioStatsApplication {
 		return new DocumentoMySqlDAOImpl(getDataSourceMySql());
 	}
 	
-	@Bean
+	
+	@Bean	
 	public Channel getConecionRabbitMQ() throws IOException, TimeoutException {
 		ConexionRabbitMQ conexionRabbitMQ = new ConexionRabbitMQ();
 		Channel channel = conexionRabbitMQ.CrearConexion();
@@ -68,6 +66,7 @@ public class ServicioStatsApplication {
 		return channel;
 	}
 	
+
 	public Receive getRabbitMQ() throws IOException, TimeoutException {
 		return new ReceiveImpl(getConecionRabbitMQ());
 	}

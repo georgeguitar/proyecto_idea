@@ -26,10 +26,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
-import com.stats.dao.DocumentoDAO;
-import com.stats.dao.DocumentoMySqlDAO;
-import com.stats.model.Documento;
-import com.stats.model.Person;
+import com.stats.dao.IdeaDAOImpl;
+import com.stats.dao.VoteDAOImpl;
+import com.stats.model.Idea;
 import com.stats.rabbitmq.ReceiveImpl;
 
 @RestController
@@ -42,58 +41,53 @@ public class ServiciosRest {
 	}	
 	
 	@Autowired
-	private DocumentoDAO documentoDAO;
+	private IdeaDAOImpl ideaDAOImpl;
 	
 	@Autowired
-	private DocumentoMySqlDAO documentoMySqlDAO;
+	private VoteDAOImpl voteDAOImpl;
 	
 	@Autowired
 	private ReceiveImpl receiveImpl;	
 	
 	@GET
-	@RequestMapping(value = "/listarDocumentos")
+	@RequestMapping(value = "/listarIdeas")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String listaLibros(){
-		List<Documento> listaDocumentos = new ArrayList<Documento>();
-		listaDocumentos = documentoDAO.listar();
+	public String listarIdeas(){
+		List<Idea> listaIdeas = new ArrayList<Idea>();
+		listaIdeas = ideaDAOImpl.listar();
 		
-		String json = new Gson().toJson(listaDocumentos);
+		String json = new Gson().toJson(listaIdeas);
 		
 		return json;
 	}
 	
-	@GET
-	@RequestMapping(value = "/buscarDocsDisponibles/{disponibilidad}")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String buscarDisponibilidad(@PathVariable String disponibilidad){
-		List<Documento> listaDocumentos = new ArrayList<Documento>();
-		listaDocumentos = documentoDAO.buscar("disponibilidad", disponibilidad);
-		
-		String json = new Gson().toJson(listaDocumentos);
-		
-		return json;
-	}
+//	@POST
+//	@RequestMapping(value = "/nuevoDocumento")
+//	@Consumes(MediaType.APPLICATION_JSON)
+//	public void nuevo(Prueba prueba) {
+//		System.out.println(prueba.toString());
+//	}
+
+	
+//	@GET
+//	@RequestMapping(value = "/buscarIdea/{idea}")
+//	@Produces(MediaType.TEXT_PLAIN)
+//	public String buscarDisponibilidad(@PathVariable String disponibilidad){
+//		List<Idea> listaIdeas = new ArrayList<Idea>();
+//		listaIdeas = ideaDAOImpl.buscar("idea", disponibilidad);
+//		
+//		String json = new Gson().toJson(listaIdeas);
+//		
+//		return json;
+//	}
 	
 	@GET
-	@RequestMapping(value = "/buscarTitulos/{titulo}")
+	@RequestMapping(value = "/obtenerVotos/{idIdea}")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String buscarPorTitulo(@PathVariable String titulo){
-		List<Documento> listaDocumentos = new ArrayList<Documento>();
-		listaDocumentos = documentoDAO.buscar("titulo", titulo);
+	public String obtenerVotos(@PathVariable String idIdea){
+		Integer votos = voteDAOImpl.obtenerVotos(idIdea);
 		
-		String json = new Gson().toJson(listaDocumentos);
-		
-		return json;
-	}
-	
-	@GET
-	@RequestMapping(value = "/listarPersona")
-	@Produces(MediaType.TEXT_PLAIN)
-	public String listaPerson(){
-		List<Person> listaPerson = new ArrayList<Person>();
-		listaPerson = documentoMySqlDAO.listar();
-		
-		String json = new Gson().toJson(listaPerson);
+		String json = new Gson().toJson(votos);
 		
 		return json;
 	}

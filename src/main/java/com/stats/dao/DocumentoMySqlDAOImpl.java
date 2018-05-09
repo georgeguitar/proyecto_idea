@@ -21,7 +21,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.stats.model.Person;
+import com.stats.model.User;
 
 @Service
 public class DocumentoMySqlDAOImpl implements DocumentoMySqlDAO {
@@ -33,8 +33,8 @@ public class DocumentoMySqlDAOImpl implements DocumentoMySqlDAO {
 	}
 	
 	@Override
-	public List<Person> listar() {
-		List<Person> listaDocumentos = new ArrayList<Person>();
+	public List<User> listar() {
+		List<User> listaDocumentos = new ArrayList<User>();
 		/*
 		PreparedStatement st;
 		try {
