@@ -18,5 +18,7 @@ api.get('/idea/:ideaId', ideaCtrl.getIdea)
 api.post('/idea', ideaCtrl.saveIdea)
 api.put('/idea/:ideaId', ideaCtrl.updateIdea)
 api.delete('/idea/:ideaId', ideaCtrl.deleteIdea)
+api.get('/votar/:ideaId/:usuarioId', ideaCtrl.votarIdea)
+api.get('/quitar/:ideaId/:usuarioId', ideaCtrl.votarIdea)
 
 module.exports = api
