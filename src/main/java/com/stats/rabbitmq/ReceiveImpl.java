@@ -1,8 +1,6 @@
 package com.stats.rabbitmq;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +14,11 @@ import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 import com.stats.dao.IdeaDAOImpl;
 import com.stats.dao.VoteDAOImpl;
-import com.stats.model.Idea;
 import com.stats.model.MensajeJson;
 
 @Service
 public class ReceiveImpl implements Receive {
+	private final String QUEUE_NAME = "ESTADISTICA";
 	
 	@Autowired
 	private VoteDAOImpl voteDAOImpl;
@@ -28,64 +26,80 @@ public class ReceiveImpl implements Receive {
 	@Autowired
 	private IdeaDAOImpl ideaDAOImpl;
 	
-	private final String QUEUE_NAME = "ESTADISTICA";
-	
 	Channel channel;
 	
 	public ReceiveImpl(Channel _channel) {
 		channel = _channel;
 	}
 	
-	
-	
 	public void escuchar() throws IOException, TimeoutException {
 	    channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-	    System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+	    System.out.println(" [*] Esperando por mensajes.");
 	
 	    Consumer consumer = new DefaultConsumer(channel) {
 	      @Override
 	      public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body)
 	          throws IOException {
 	        String message = new String(body, "UTF-8");
-		    System.out.println("Mensaje recibido: " + message);
-		    
-		    //{ "operation": "BORRAR_VOTOS", "idIdea": "5aeccf443ff59c74b0446108" }
-		    Gson gson = new Gson(); // Or use new GsonBuilder().create();
+
+		    Gson gson = new Gson();
 		    MensajeJson mensajeJson = gson.fromJson(message, MensajeJson.class);
 		    
-//	        String[] parts = message.split(",");
-//	        String mensaje = parts[0];
-	        
-	        if ("OBTENER_VOTOS".equals(mensajeJson.getOperation())) {
+	        /** 
+	         * Formato:
+	         * "{ 'accion': 'OBTENER_VOTOS', 'idIdea': '5aefc8f596d58b0004f18cc9'}"
+	         * **/
+	        if ("OBTENER_VOTOS".equals(mensajeJson.getAccion())) {
 		        String idIdea = mensajeJson.getIdIdea();
-		        System.out.println(" [x] Received '" + message + "'");
-		        System.out.println(voteDAOImpl.obtenerVotos(idIdea));
+			    System.out.println(" [x] Mensaje recibido: '" + mensajeJson.getAccion() + "'");
+		        System.out.println(" [-] Cantidad de votos: '" + voteDAOImpl.obtenerVotos(idIdea));
 	        }
-	        if ("ACTUALIZAR_IDEAS".equals(mensajeJson.getOperation())) {
-		        System.out.println(" [x] Received '" + message + "'");
-	        	List<Idea> listaIdeas = new ArrayList<Idea>();
-	        	listaIdeas = ideaDAOImpl.listar();
-	        	for (Idea idea : listaIdeas) {
-	        		Integer cantVotosPorIdea = voteDAOImpl.obtenerVotos(idea.getId());
-	        		if (cantVotosPorIdea != idea.getVotes()) {
-		        		idea.setVotes(cantVotosPorIdea);
-		        		ideaDAOImpl.guardarActualizar(idea);
-				        System.out.println("votos actualizados, idIdea: " + idea.getId());
-
-	        		}
-	        	}
+	        /** 
+	         * Formato:
+	         * "{ 'accion': 'ACTUALIZAR_IDEAS'}"
+	         * **/
+	        if ("ACTUALIZAR_IDEAS".equals(mensajeJson.getAccion())) {
+			    System.out.println(" [x] Mensaje recibido: '" + mensajeJson.getAccion() + "'");
+			    ideaDAOImpl.actualizarIdeas(voteDAOImpl);
 	        }
-	        if ("BORRAR_VOTOS".equals(mensajeJson.getOperation())) {
+	        /** 
+	         * Formato:
+	         * "{ 'accion': 'BORRAR_VOTOS', 'idUsuario': '8' }"
+	         * **/
+	        if ("BORRAR_VOTOS".equals(mensajeJson.getAccion())) {
+			    System.out.println(" [x] Mensaje recibido: '" + mensajeJson.getAccion() + "'");
+			    String idUsuario = mensajeJson.getIdUsuario();
+			    voteDAOImpl.borrarVotos(idUsuario);
+			    ideaDAOImpl.actualizarIdeas(voteDAOImpl);
+		        System.out.println(" [-] BORRAR_VOTOS: " + "ejecutado con éxito.");
+	        }
+	        /** 
+	         * Formato:
+	         * "{ 'accion': 'VOTAR_IDEA', 'idUsuario': '8', 'idIdea': '5aefc8f596d58b0004f18cc9'}"
+	         * **/
+	        if ("VOTAR_IDEA".equals(mensajeJson.getAccion())) {
 		        String idIdea = mensajeJson.getIdIdea();
-		        System.out.println(" [x] Received '" + message + "'");
-		        if (voteDAOImpl.borrarVotos(idIdea)) {
-			        System.out.println(idIdea + " borrado con éxito de la tabla votes.");		        	
-		        } else {
-			        System.out.println("¡No se pudo borrar!");
-		        }
+		        String idUsuario = mensajeJson.getIdUsuario();
+			    System.out.println(" [x] Mensaje recibido: '" + mensajeJson.getAccion() + "'");
+		        voteDAOImpl.insertarVoto(idUsuario, idIdea);
+			    ideaDAOImpl.actualizarIdeas(voteDAOImpl);
+		        System.out.println(" [-] VOTAR_IDEA: " + "ejecutado con éxito.");
+	        }
+	        /** 
+	         * Formato:
+	         * "{ 'accion': 'QUITAR_IDEA', 'idUsuario': '8', 'idIdea': '5aefc8f596d58b0004f18cc9'}"
+	         * **/
+	        if ("QUITAR_IDEA".equals(mensajeJson.getAccion())) {
+		        String idIdea = mensajeJson.getIdIdea();
+		        String idUsuario = mensajeJson.getIdUsuario();    
+			    System.out.println(" [x] Mensaje recibido: '" + mensajeJson.getAccion() + "'");
+		        voteDAOImpl.eliminarVoto(idUsuario, idIdea);
+			    ideaDAOImpl.actualizarIdeas(voteDAOImpl);
+		        System.out.println(" [-] QUITAR_IDEA: " + "ejecutado con éxito.");
 	        }
 	      }
 	    };
 	    channel.basicConsume(QUEUE_NAME, true, consumer);
 	}
+
 }

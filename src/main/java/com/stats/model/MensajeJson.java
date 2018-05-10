@@ -1,14 +1,15 @@
 package com.stats.model;
 
 public class MensajeJson {
-	String operation;
+	String accion;
 	String idIdea;
+	String idUsuario;
 	
-	public String getOperation() {
-		return operation;
+	public String getAccion() {
+		return accion;
 	}
-	public void setOperation(String operation) {
-		this.operation = operation;
+	public void setAccion(String accion) {
+		this.accion = accion;
 	}
 	public String getIdIdea() {
 		return idIdea;
@@ -16,4 +17,11 @@ public class MensajeJson {
 	public void setIdIdea(String idIdea) {
 		this.idIdea = idIdea;
 	}
+	public String getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(String idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
 }

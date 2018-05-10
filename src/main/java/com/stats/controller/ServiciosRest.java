@@ -1,13 +1,3 @@
-/**
- * Demo realizado por:
- * Claudia Salazar Gonzales
- * Juan Dirceu Navarro Arias
- * Luis Fernando Numa Navarro Arias
- * 
- * Diplomado Software Libre versión Sucre
- * noviembre 2016
- */
-
 package com.stats.controller;
 
 import java.io.IOException;
@@ -20,6 +10,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,13 +22,16 @@ import com.stats.dao.IdeaDAOImpl;
 import com.stats.dao.VoteDAOImpl;
 import com.stats.model.Idea;
 import com.stats.rabbitmq.ReceiveImpl;
+import com.stats.servicio.ServicioStatsApplication;
 
 @RestController
 @RequestMapping("/stats")
 public class ServiciosRest {
+	private static Logger logger = LogManager.getLogger(ServicioStatsApplication.class);
 	
 	@PostConstruct
 	public void initialize() throws IOException, TimeoutException {
+		logger.info("- Logger: Escuchando servicios RabbitMQ.");
 		receiveImpl.escuchar();
 	}	
 	

@@ -28,7 +28,6 @@ public class VoteDAOImpl implements VoteDAO {
 
 		    while(rs.next()){
 		    	votos = rs.getInt("votos");
-		    	System.out.println("votos: " + votos);
 		    }  
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,8 +37,42 @@ public class VoteDAOImpl implements VoteDAO {
 	}
 	
 	@Override
-	public Boolean borrarVotos(String idIdea) {
-		String sql = "DELETE FROM votes WHERE idea_id = '" + idIdea + "'";
+	public Boolean borrarVotos(String idUsuario) {
+		String sql = "DELETE FROM votes WHERE user_id = '" + idUsuario + "'";
+		Boolean respuesta = true;
+		PreparedStatement st;
+		
+		try {
+			st = con.prepareStatement(sql);
+			st.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			respuesta = false;
+		}
+		return respuesta;
+	}
+
+	@Override
+	public Boolean eliminarVoto(String idUsuario, String idIdea) {
+		String sql = "DELETE FROM votes WHERE idea_id = '" + idIdea + "' and user_id = '" + idUsuario + "'";
+		Boolean respuesta = true;
+		PreparedStatement st;
+		
+		try {
+			st = con.prepareStatement(sql);
+			st.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			respuesta = false;
+		}
+		return respuesta;
+	}
+	
+	@Override
+	public Boolean insertarVoto(String idUsuario, String idIdea) {
+		String sql = "INSERT INTO votes (user_id, idea_id) VALUES ('" + idUsuario + "', '"+ idIdea + "')";
 		Boolean respuesta = true;
 		PreparedStatement st;
 		

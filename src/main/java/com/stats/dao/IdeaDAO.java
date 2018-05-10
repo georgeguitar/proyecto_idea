@@ -6,9 +6,8 @@ import com.stats.model.Idea;
 
 public interface IdeaDAO {
 	public void guardarActualizar(Idea idea);
-	public void actualizarIdeas();
+	public void actualizarIdeas(VoteDAOImpl voteDAOImpl);
 	public void borrar(String idIdea);
-//	public List<Idea> buscar(String llave, String valor);
 	public List<Idea> listar();
 	public Idea get(String idIdea);
 }

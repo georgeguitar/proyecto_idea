@@ -5,22 +5,23 @@ import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.util.concurrent.TimeoutException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.mongodb.DB;
 import com.mongodb.client.MongoDatabase;
 import com.rabbitmq.client.Channel;
 import com.stats.conexiones.ConexionMongo;
 import com.stats.conexiones.ConexionMySql;
 import com.stats.conexiones.ConexionRabbitMQ;
-import com.stats.dao.DocumentoMySqlDAO;
-import com.stats.dao.DocumentoMySqlDAOImpl;
 import com.stats.dao.IdeaDAO;
 import com.stats.dao.IdeaDAOImpl;
+import com.stats.dao.VoteDAO;
+import com.stats.dao.VoteDAOImpl;
 import com.stats.rabbitmq.Receive;
 import com.stats.rabbitmq.ReceiveImpl;
 
@@ -29,7 +30,10 @@ import com.stats.rabbitmq.ReceiveImpl;
 @EnableAutoConfiguration
 @ComponentScan(basePackages="com.stats")
 public class ServicioStatsApplication {
+	private static Logger logger = LogManager.getLogger(ServicioStatsApplication.class);
+	
 	public static void main(String[] args) throws IOException, TimeoutException {
+		logger.info("- Logger: Iniciando Spring Boot..");
 		SpringApplication.run(ServicioStatsApplication.class, args);
 	}
 	
@@ -53,8 +57,8 @@ public class ServicioStatsApplication {
 		return db;
 	}
 
-	public DocumentoMySqlDAO getContact1DAO() throws UnknownHostException {
-		return new DocumentoMySqlDAOImpl(getDataSourceMySql());
+	public VoteDAO getVoteDAO() throws UnknownHostException {
+		return new VoteDAOImpl(getDataSourceMySql());
 	}
 	
 	
