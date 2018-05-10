@@ -2,12 +2,25 @@
 
 const mongoose = require('mongoose')
 const app = require('./app')
-const config = require('./config')
+const config = require('./config_receive')
+// const api = express.Router()
 
+const express = require ('express')
 var amqp = require('amqplib/callback_api');
-const productCtrl = require('./controllers/product')
-
 const Idea = require('./models/idea')
+const IdeaCtrl = require('./controllers/product')
+
+// Se hace la conexion y se define la base de datos a utilizar
+mongoose.connect(config.db, (err, res) => {
+  if (err) {
+      return console.log(`Error al conectar a la base de datos: ${err}`)
+  }
+  console.log('Conexion a la base de datos establecida...')
+
+  app.listen(config.port, () => {
+      console.log(`API REST corriendo en el recibidor http://localhost:${config.port}`)
+  })
+})
 
 amqp.connect('amqp://wxlrebpd:cVgfbjWvPcTGZ_VlfkMLCcfn6TQhtxAL@llama.rmq.cloudamqp.com/wxlrebpd', function(err, conn) {
   conn.createChannel(function(err, ch) {
@@ -20,16 +33,37 @@ amqp.connect('amqp://wxlrebpd:cVgfbjWvPcTGZ_VlfkMLCcfn6TQhtxAL@llama.rmq.cloudam
       console.log(str);
       var message = JSON.parse(str);
       if (message.accion == 'USUARIO_ELIMINADO'){
+        console.log(message.idUsuario);
         /*
-        console.log("Entrando a eliminar");   
-        Idea.remove({ proposerId: message.idUsuario }, function (err) {
-          console.log(err);
-          if (err) return console.log(err);
-          // removed!
-
-          console.log("Ideas eliminadas");
-        });
+        * Se esta utilizando mongoose, como manejar a mongoDB, por lo que se tiene que buscar con comandos de esa extension
+        * http://mongoosejs.com/docs/guide.html
+        * o si no utilizar una alternativa
+        * Este script esta en C:\xampp\htdocs\tutoriales\api-rest
+        * Ejecutar el script en la consola escribiendo 
+        * node receive.js 
+        * Si al ejecutar sale que se esta usando el puerto 3000 ejecutar
+        * netstat -ano | findstr :3000
+        * y con el comando 
+        * tskill typeyourPIDhere
+        * matar el proceso, es un problema que tiene node.js en windows
+        * 
+        * El otro script esta en C:\xampp\htdocs\tutoriales\rabbitmq\ejemplo01
+        * en la otra consola send.js      
         */
+
+ 
+
+       //Idea.deleteMany( { proposerId: 5 } );
+       // console.log(Idea);
+        
+       Idea.deleteMany({ proposerId: message.idUsuario }, function (err) {
+        //if (err) res.status(500).send({message: `Error al borrar las ideas: ${err}`})
+        //res.status(200).send({message: `La ideas eliminadas`})
+        console.log('Borrado');
+      });
+
+
+
       }
       console.log(" [x] Received %s", msg.content.toString());
     }, {noAck: true});

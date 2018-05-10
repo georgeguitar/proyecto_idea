@@ -71,8 +71,24 @@ function deleteIdea (req, res){
 }
 
 function deleteIdeas (req, res){
+    let usuarioId = req.params.usuarioId
     // Falta hacer eso
     // { "accion": "BORRAR_VOTOS", "idIdea": "x1, x2, x3" }
+    Idea.deleteMany({ proposerId: usuarioId }, function (err) {
+        if (err) res.status(500).send({message: `Error al borrar las ideas: ${err}`})
+        res.status(200).send({message: `La ideas eliminadas`})
+    });
+
+/*
+    Idea.find({'proposerId':'5'}, (err, ideas) =>{
+        if (err) return res.status(500).send({message: `Error al realizar la petición ${err}`})
+        if (!ideas) return res.status(404).send({message: `No existen las ideas`})
+        
+        logger.info("Se ha listado las ideas")
+        res.status(200).send({ ideas })
+    })
+*/
+
 }
 
 function votarIdea (req, res){
